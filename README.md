@@ -1,9 +1,9 @@
 # algo_trading_class_challenge
 
 
-This is a Python application allowing users to use Neuro Network & Deep Learning to analyze and predict whether a startup will be successful
+This is a Python application allowing users to use supervised machine learning to predict stock market going up or down by applying technical analysis
 
-The application works by importing and cleaning data from csv, Encode the dataset’s categorical variables using `OneHotEncoder`,  Split the data into training and testing datasets by using `train_test_split`, Create a deep neural network by assigning the number of input features, the number of layers, and the number of neurons on each layer using Tensorflow’s Keras, predict and evaluate the metrics. Then Optimize the neural network model by adjusting hyper parameter to try to inprove the model performance. 
+The application works by importing and cleaning data from csv, Generate trading signals using short- and long-window SMA values. Split the data into training and testing datasets. Use the `SVC` classifier model from SKLearn's support vector machine (SVM) learning method to fit the training data and make predictions based on the testing data. Finally Use an Alternative ML Model and Evaluate Strategy Returns
  
 
  
@@ -35,12 +35,39 @@ Alerternatively you can simply just install requirement file included in this fo
 
 ## Usage
 
-Step 1: venture_funding_with_deep_learning.ipynb
+Step 1: machine_learning_trading_bot.ipynb
 ```python
-venture_funding_with_deep_learning.ipynb
+machine_learning_trading_bot.ipynb
 ```
 
-Test
+Step 2: import data from csv.
+
+
+<img width="419" alt="image" src="https://user-images.githubusercontent.com/99616004/175840055-954dbb47-ef1e-4a6a-b24b-77e7fae9efa8.png">
+
+Step 3: import data from csv.
+
+
+<img width="419" alt="image" src="https://user-images.githubusercontent.com/99616004/175840055-954dbb47-ef1e-4a6a-b24b-77e7fae9efa8.png">
+
+
+Step 4:  Plot Strategy Returns to examine performance
+
+
+<img width="376" alt="image" src="https://user-images.githubusercontent.com/99616004/175840160-00234a49-38ec-42da-99ab-9007ea6062b6.png">
+
+Step 5: Use the `SVC` classifier model from SKLearn's support vector machine (SVM) learning method to fit the training data and make predictions based on the testing data. Review the predictions.
+
+
+<img width="480" alt="image" src="https://user-images.githubusercontent.com/99616004/175840228-37deb686-89dc-41c5-a3ac-94752dafdd12.png">
+
+Step 6: Create a cumulative return plot that shows the actual returns vs. the strategy returns
+
+
+<img width="373" alt="image" src="https://user-images.githubusercontent.com/99616004/175840280-856a11be-ba07-4161-a91a-39213a5a259e.png">
+
+Step 7: Tune the training algorithm by adjusting the size of the training dataset. also Adjust one or both of the windows for the algorithm. Rerun the notebook with the updated parameters, and record the results in your `README.md` file.
+
 
 Orginal metrics
 
@@ -67,45 +94,19 @@ Choose the set of parameters that best improved the trading algorithm returns: F
 <img width="375" alt="image" src="https://user-images.githubusercontent.com/99616004/175345567-dfd93763-6623-4643-be80-2610b48fc76a.png">
 
 
-Step 2: import data from csv.
+Step 8: mport a new classifier, such as `AdaBoost`, `DecisionTreeClassifier`, or `LogisticRegression`. Backtest the new model to evaluate its performance. 
 
 
-<img width="863" alt="image" src="https://user-images.githubusercontent.com/99616004/174387086-8cb1f436-e64f-4ff6-9a5d-5f49f681e7e1.png">
+<img width="463" alt="image" src="https://user-images.githubusercontent.com/99616004/175840467-ff7f013f-7fbf-41fc-807e-86a2200d9726.png">
 
-
-
-Step 3: Encode the dataset’s categorical variables using `OneHotEncoder`,
-
-<img width="890" alt="image" src="https://user-images.githubusercontent.com/99616004/174387185-04687f93-851a-4898-b81b-11806768da7a.png">
-
-Step 4: Split the data using train_test_split & Use scikit-learn's `StandardScaler` to scale the features data.
-
-<img width="682" alt="image" src="https://user-images.githubusercontent.com/99616004/174387431-69c72349-8d66-4005-acf6-e3489a71103c.png">
-
-
-
-Step 5: Create a deep neural network by assigning the number of input features, the number of layers, and the number of neurons on each layer using Tensorflow’s Keras.
-
-<img width="586" alt="image" src="https://user-images.githubusercontent.com/99616004/174387588-ad56526a-ab3c-4871-97f3-089424880bc2.png">
-
-Step 6: predict and Evaluate the model using the test data to determine the model’s loss and accuracy
-
-<img width="686" alt="image" src="https://user-images.githubusercontent.com/99616004/174387727-18169e41-db58-4daa-97fd-ad1fce28e58d.png">
-
-Step 7: Define at least three new deep neural network models (resulting in the original plus 3 optimization attempts). With each, try to improve on your first model’s predictive accuracy.
-
-<img width="868" alt="image" src="https://user-images.githubusercontent.com/99616004/174387912-066c2a7a-d0c3-47f1-85b4-976ba4594ed4.png">
-
-Step 8: save the models as H5 
-
-<img width="463" alt="image" src="https://user-images.githubusercontent.com/99616004/174391707-1f90faa0-e871-4923-8c15-cc4ca8cede25.png">
+<img width="372" alt="image" src="https://user-images.githubusercontent.com/99616004/175840482-f80c859f-0767-40ef-bc90-84fc270f2581.png">
 
 
 
 
 Conclution:  
 
-deep nero network generates decent metrics (for example 0.73 accuracy), various attemps have been tried (adding more nodes to hidden layer, add more layer and change nodes in diff layers), the accuracy can only marginally improved it seems
+It looks "Fine Tune 1:Change testing period from 3 months to 6 months" offers the best performance of all testings
 
 
 
